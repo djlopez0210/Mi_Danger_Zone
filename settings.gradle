@@ -1,0 +1,2 @@
+rootProject.name = "Danger Zone"
+include ':app'
