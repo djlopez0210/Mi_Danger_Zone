@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-
 public class MainActivity extends AppCompatActivity {
 
     TextView mensaje;
@@ -14,11 +13,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Lugar lugar = new Lugar("Oficina","Carrera 59 # 21 -21",
-                7.1377,-73.121, TipoLugar.COMPRAS,
-                5159000, "https://www.jjmasof.esy.es/","detalles y publicidad",5);
-        mensaje = findViewById(R.id.txt_mensaje);
-        mensaje.setText(lugar.toString()); // lugar.toString();
-        Log.d("Tag en Main","Mensaje prueba por el logcat "+lugar.toString());
+        RepositorioLugares lugares = (RepositorioLugares) new LugaresLista();
+        for (int i=0; i<lugares.tamaño();i++){
+            System.out.println(lugares.elemento(i).toString());
+        }
     }
+
 }

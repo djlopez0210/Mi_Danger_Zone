@@ -15,6 +15,12 @@ public class Lugar {
 
  //Constructor
 
+    public Lugar() {
+         fecha = System.currentTimeMillis();
+         posicion = new GeoPunto(0.0,0.0);
+         tipo = TipoLugar.OTROS;
+ }
+
     public Lugar(String nombre, String direccion, double longitud,
                  double latitud, TipoLugar tipo, int telefono, String url, String comentario,
                  int valoracion)
